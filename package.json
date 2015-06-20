@@ -1,0 +1,30 @@
+{
+  "name": "metalsmith-archive",
+  "version": "1.0.0",
+  "description": "Metalsmith plugin to generate year, month and day archive pages from a collection.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build && mocha --compilers coffee:coffee-script/register -R spec --ui bdd",
+    "build": "coffee -o lib src/plugin.coffee",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "metalsmith",
+    "plugin",
+    "archive",
+    "collection",
+    "posts"
+  ],
+  "author": "Sarah Henderson",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "coffee-script": "^1.9.3",
+    "metalsmith": "^1.7.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3"
+  }
+}
