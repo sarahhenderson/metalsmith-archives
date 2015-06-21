@@ -14,18 +14,8 @@ module.exports = (options) ->
          year: 'archive.jade'
          month: 'archive.jade'
          day: 'archive.jade'
-      included_properties: ['title', 'date', 'author', 'tags', 'image', 'wordCount', 'readingTime', 'path']
 
    _.defaults options, defaults
-
-
-   getPostMetaDataFromFile = (file, options) ->
-      # extract metadata about the post for display on tag pages
-      post = {}
-      for prop in options.included_properties
-         post[prop] = file[prop]
-         
-      return post
 
    createArchiveObject = (period, year, month, day) ->
       archive = 
@@ -107,13 +97,10 @@ module.exports = (options) ->
          # ensure an object exists for the year, month and day
          addDateToArchive(archive, year, month, day)
          
-         # get the post metadata
-         post = getPostMetaDataFromFile(file, options)
-         
-         # add the post metadata to each archive object
-         archive[year].archivedPosts.push post
-         archive[year].children[month].archivedPosts.push post
-         archive[year].children[month].children[day].archivedPosts.push post
+         # add the file to each archive object
+         archive[year].archivedPosts.push file
+         archive[year].children[month].archivedPosts.push file
+         archive[year].children[month].children[day].archivedPosts.push file
          
       # sort the archived posts according to the options
       sortArchivedPosts(archive, options.sort)

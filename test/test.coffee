@@ -111,7 +111,7 @@ describe 'metalsmith-archive', () ->
                files['2015/01/01/index.html' ].template.should.equal 'archive.jade'
                done()
    
-      it 'should copy metadata into archivedPosts', (done)->
+      it 'should add files to archivedPosts', (done)->
          
          Metalsmith(__dirname)
             .source('fixtures/src')
@@ -122,11 +122,11 @@ describe 'metalsmith-archive', () ->
                post = files['2015/01/index.html'].archivedPosts[0]
                should.exist(post)
                post.title.should.equal 'test title'
+               post.slug.should.equal 'test-slug'
                post.author.should.equal 'test-author'
                post.image.should.equal 'test.jpg'
                post.wordCount.should.equal 42
                post.readingTime.should.equal 2
                post.tags.should.equal 'a,b,c'
-               should.not.exist(post.slug)
                done()
    

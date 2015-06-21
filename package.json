@@ -1,7 +1,7 @@
 {
-  "name": "metalsmith-archive",
+  "name": "metalsmith-archives",
   "version": "1.0.0",
-  "description": "Metalsmith plugin to generate year, month and day archive pages from a collection.",
+  "description": "Metalsmith plugin to generate year, month and day archive pages.",
   "main": "index.js",
   "scripts": {
     "test": "npm run build && mocha --compilers coffee:coffee-script/register -R spec --ui bdd",

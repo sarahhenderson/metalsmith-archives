@@ -54,7 +54,8 @@ Metalsmith.use(archives({
 
 ```
 
-In addition, the plugin adds an 'archives' field to the Metalsmith metadata for you to use anywhere in the site.
+In addition, the plugin adds an 'archives' field to the Metalsmith metadata for you to use anywhere in the site.  For instance, you could use this to generate a list of monthly archive pages in a sidebar.
+
 The structure of this field is:
 
 ```
