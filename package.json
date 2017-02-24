@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npm run build && mocha --compilers coffee:coffee-script/register -R spec --ui bdd",
     "build": "coffee -o lib src/plugin.coffee",
+    "prepublish": "npm run build",
     "postinstall": "npm run build"
   },
   "keywords": [
